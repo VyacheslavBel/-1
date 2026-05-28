@@ -47,7 +47,7 @@
             ЗАПИСАТЬСЯ
           </button>
           <div class="social-icons">
-            <a href="#" class="social-icons__link">
+            <a href="#" class="social-icons__link" aria-label="Telegram">
               <svg
                 width="20"
                 height="20"
@@ -61,7 +61,7 @@
                 />
               </svg>
             </a>
-            <a href="#" class="social-icons__link">
+            <a href="#" class="social-icons__link" aria-label="YouTube">
               <svg
                 width="20"
                 height="20"
@@ -74,7 +74,7 @@
                 <path d="M9.75 8.5L15.5 12L9.75 15.5V8.5Z" />
               </svg>
             </a>
-            <a href="#" class="social-icons__link">
+            <a href="#" class="social-icons__link" aria-label="Instagram">
               <svg
                 width="20"
                 height="20"
@@ -110,9 +110,11 @@
         <a href="#about" class="mobile-menu__link">Обо мне</a>
         <a href="#services" class="mobile-menu__link">Услуги</a>
         <a href="#footer" class="mobile-menu__link">Контакты</a>
-        <button class="btn btn--primary btn--full booking-open-btn">
-          ЗАПИСАТЬСЯ
-        </button>
+        <div class="mobile-menu__buttons">
+          <button class="btn btn--primary btn--full booking-open-btn">
+            ЗАПИСАТЬСЯ
+          </button>
+        </div>
         <div class="mobile-menu__social">
           <a href="#">Telegram</a>
           <a href="#">YouTube</a>
@@ -124,31 +126,28 @@
     <main>
       <!-- HERO SECTION -->
       <section class="hero">
+        <div class="hero__mobile-image">
+          <img src="assets/images/hero-photo.jpg" alt="Екатерина Полякова" />
+        </div>
+        <div class="hero__overlay"></div>
         <div class="container hero__container">
           <div class="hero__content">
+            <div class="hero__label">СЕКС — ЭТО ОБЛАСТЬ ИССЛЕДОВАНИЯ СЕБЯ</div>
             <h1 class="hero__title">
-              СЕКС — ЭТО ОБЛАСТЬ<br />ИССЛЕДОВАНИЯ СЕБЯ
+              Близость начинается<br />с принятия себя
             </h1>
             <p class="hero__subtitle">
-              Откройте новую глубину близости и начните жить в контакте с собой
-              и партнером
+              Помогаю женщинам и парам раскрыть сексуальность, желание и глубину
+              отношений без стыда и ограничений.
             </p>
             <div class="hero__buttons">
               <button class="btn btn--primary booking-open-btn">
                 ЗАПИСАТЬСЯ НА КОНСУЛЬТАЦИЮ
               </button>
             </div>
-          </div>
-          <div class="hero__image">
-            <div class="hero__image-wrapper">
-              <img
-                src="assets/images/hero-photo.jpg"
-                alt="Екатерина Полякова"
-              />
-              <div class="hero__credentials">
-                <div class="hero__credentials-item">
-                  6+ лет практики. 5000+ клиентов. Член Ассоциации сексологов
-                </div>
+            <div class="hero__credentials">
+              <div class="hero__credentials-item">
+                6+ лет практики. 5000+ клиентов. Член Ассоциации сексологов
               </div>
             </div>
           </div>
@@ -303,7 +302,6 @@
             <button class="services__tab" data-tab="tab4">EVENT & MEDIA</button>
           </div>
 
-          <!-- Tab 1 -->
           <div class="services__panel active" id="tab1">
             <div class="services__grid">
               <div class="product-card" data-service="individual">
@@ -391,7 +389,6 @@
             </div>
           </div>
 
-          <!-- Tab 2 -->
           <div class="services__panel" id="tab2">
             <div class="services__grid">
               <div class="product-card" data-service="male-orgasm">
@@ -479,7 +476,6 @@
             </div>
           </div>
 
-          <!-- Tab 3 -->
           <div class="services__panel" id="tab3">
             <div class="services__grid services__grid--3">
               <div class="product-card" data-service="bachelorette-1">
@@ -602,7 +598,6 @@
             </div>
           </div>
 
-          <!-- Tab 4 -->
           <div class="services__panel" id="tab4">
             <div class="services__grid">
               <div class="product-card" data-service="event">
@@ -680,10 +675,9 @@
         </div>
       </section>
 
-      <!-- APPROACH SECTION - ИСПРАВЛЕННЫЙ -->
+      <!-- APPROACH SECTION -->
       <section class="approach section">
         <div class="container">
-          <!-- Верхний уровень: три колонки -->
           <div class="approach__row">
             <div class="approach__text-block">
               <h2 class="approach__title">МОЙ ПОДХОД</h2>
@@ -700,9 +694,10 @@
               <div class="approach__photo-wrapper">
                 <img
                   src="assets/images/approach-photo.jpg"
-                  alt="Екатерина Полякова в кабинете"
+                  alt="Екатерина Полякова"
                   class="approach__photo"
                 />
+                <div class="approach__photo-gradient"></div>
               </div>
             </div>
 
@@ -716,7 +711,6 @@
             </div>
           </div>
 
-          <!-- Нижний уровень: плашка с принципами -->
           <div class="approach__principles-card">
             <div class="approach__principles-left">
               <h3 class="approach__principles-title">ПРИНЦИПЫ МОЕЙ РАБОТЫ</h3>
@@ -851,111 +845,47 @@
         </div>
       </section>
 
-      <!-- GUIDES SECTION -->
+      <!-- GUIDES SECTION - PREMIUM SHOWCASE -->
       <section class="guides section">
         <div class="container">
           <h2 class="section__title">Гайды и методички</h2>
-          <div class="guides__grid">
-            <div class="ebook-card">
-              <div class="ebook-card__cover">
-                <img src="assets/images/guide-anal.jpg" alt="Гайд" />
-                <div class="ebook-card__badge">PDF</div>
+          <p class="section__subtitle">
+            Авторские материалы для глубокой работы над собой
+          </p>
+
+          <div class="showcase">
+            <!-- Главный экран продукта -->
+            <div class="showcase__main" id="showcaseMain">
+              <div class="showcase__image">
+                <img
+                  src="assets/images/guide-anal.jpg"
+                  alt="Обложка"
+                  id="mainImage"
+                />
+                <div class="showcase__badge" id="mainBadge">ПЛАТНЫЙ ГАЙД</div>
               </div>
-              <h4 class="ebook-card__title">Подготовка к анальному сексу</h4>
-              <div class="ebook-card__price">
-                <span class="price-old">1 990 ₽</span>
-                <span class="price-new">990 ₽</span>
+              <div class="showcase__info">
+                <h3 class="showcase__title" id="mainTitle">
+                  Подготовка к анальному сексу
+                </h3>
+                <p class="showcase__description" id="mainDescription">
+                  Практическое руководство, которое поможет вам и вашему
+                  партнеру исследовать этот вид близости с комфортом, доверием и
+                  удовольствием. Пошаговые техники, советы по расслаблению и
+                  снятию страхов.
+                </p>
+                <div class="showcase__price">
+                  <span class="price-old" id="mainOldPrice">1 990 ₽</span>
+                  <span class="price-new" id="mainNewPrice">990 ₽</span>
+                </div>
+                <button class="btn btn--primary showcase__btn" id="mainBtn">
+                  КУПИТЬ И СКАЧАТЬ
+                </button>
               </div>
-              <button class="btn btn--primary btn--full buy-now-btn">
-                КУПИТЬ И СКАЧАТЬ
-              </button>
             </div>
-            <div class="ebook-card">
-              <div class="ebook-card__cover">
-                <img src="assets/images/guide-sensitivity.jpg" alt="Гайд" />
-                <div class="ebook-card__badge">PDF</div>
-              </div>
-              <h4 class="ebook-card__title">
-                Пробуждение женской чувствительности
-              </h4>
-              <div class="ebook-card__price">
-                <span class="price-old">1 990 ₽</span>
-                <span class="price-new">990 ₽</span>
-              </div>
-              <button class="btn btn--primary btn--full buy-now-btn">
-                КУПИТЬ И СКАЧАТЬ
-              </button>
-            </div>
-            <div class="ebook-card">
-              <div class="ebook-card__cover">
-                <img src="assets/images/guide-masturbation.jpg" alt="Гайд" />
-                <div class="ebook-card__badge">PDF</div>
-              </div>
-              <h4 class="ebook-card__title">Женская мастурбация</h4>
-              <div class="ebook-card__price">
-                <span class="price-old">1 990 ₽</span>
-                <span class="price-new">990 ₽</span>
-              </div>
-              <button class="btn btn--primary btn--full buy-now-btn">
-                КУПИТЬ И СКАЧАТЬ
-              </button>
-            </div>
-            <div class="ebook-card">
-              <div class="ebook-card__cover">
-                <img src="assets/images/guide-questions.jpg" alt="Гайд" />
-                <div class="ebook-card__badge">FREE</div>
-              </div>
-              <h4 class="ebook-card__title">Открытые вопросы на свидании</h4>
-              <div class="ebook-card__price">
-                <span class="price-old">990 ₽</span>
-                <span class="price-new">0 ₽</span>
-              </div>
-              <button class="btn btn--secondary btn--full download-free-btn">
-                СКАЧАТЬ БЕСПЛАТНО
-              </button>
-            </div>
-            <div class="ebook-card">
-              <div class="ebook-card__cover">
-                <img src="assets/images/guide-letter.jpg" alt="Гайд" />
-                <div class="ebook-card__badge">FREE</div>
-              </div>
-              <h4 class="ebook-card__title">Техника письма бывшему</h4>
-              <div class="ebook-card__price">
-                <span class="price-old">990 ₽</span>
-                <span class="price-new">0 ₽</span>
-              </div>
-              <button class="btn btn--secondary btn--full download-free-btn">
-                СКАЧАТЬ БЕСПЛАТНО
-              </button>
-            </div>
-            <div class="ebook-card">
-              <div class="ebook-card__cover">
-                <img src="assets/images/guide-checklist.jpg" alt="Чек-лист" />
-                <div class="ebook-card__badge">FREE</div>
-              </div>
-              <h4 class="ebook-card__title">Оценка эрекции (чек-лист)</h4>
-              <div class="ebook-card__price">
-                <span class="price-old">790 ₽</span>
-                <span class="price-new">0 ₽</span>
-              </div>
-              <button class="btn btn--secondary btn--full download-free-btn">
-                СКАЧАТЬ БЕСПЛАТНО
-              </button>
-            </div>
-            <div class="ebook-card">
-              <div class="ebook-card__cover">
-                <img src="assets/images/guide-pelvic.jpg" alt="Методичка" />
-                <div class="ebook-card__badge">PDF</div>
-              </div>
-              <h4 class="ebook-card__title">Методичка мышц тазового дна</h4>
-              <div class="ebook-card__price">
-                <span class="price-old">2 490 ₽</span>
-                <span class="price-new">1 490 ₽</span>
-              </div>
-              <button class="btn btn--primary btn--full buy-now-btn">
-                КУПИТЬ И СКАЧАТЬ
-              </button>
-            </div>
+
+            <!-- Лента миниатюр -->
+            <div class="showcase__thumbs" id="showcaseThumbs"></div>
           </div>
         </div>
       </section>
@@ -1130,8 +1060,7 @@
             <option value="">Выберите услугу</option>
             <option>Индивидуальная консультация</option>
             <option>Парная консультация</option>
-            <option>Мастер-класс «Мужской оргазм»</option>
-            <option>Мастер-класс «Женский оргазм»</option>
+            <option>Мастер-класс</option>
             <option>Девичник</option>
             <option>Трансформационная игра</option>
           </select>
@@ -1151,21 +1080,6 @@
             ОТПРАВИТЬ ЗАЯВКУ
           </button>
         </form>
-      </div>
-    </div>
-
-    <div class="modal" id="videoModal">
-      <div class="modal__content modal__content--video">
-        <button class="modal__close">&times;</button>
-        <div class="video-container">
-          <iframe
-            width="100%"
-            height="400"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </div>
       </div>
     </div>
 
